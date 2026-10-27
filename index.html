@@ -1,29 +1,1381 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FORM-LITE</title>
-<style>
-body{
-    margin:0;
-    background:#0f172a;
-    color:white;
-    font-family:Segoe UI,Arial,sans-serif;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    text-align:center;
-}
-h1{font-size:4rem;}
-p{font-size:1.3rem;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    Form-Lite GmbH | Engineering the next generation of bicycle frames
+  </title>
+
+  <meta
+    name="description"
+    content="Form-Lite develops advanced manufacturing solutions for next-generation bicycle frame structures. Lite Mobility. Closer to the Market. Faster to Sustain."
+  >
+
+  <meta name="theme-color" content="#080d16">
+
+  <style>
+
+    :root {
+      --bg: #080d16;
+      --bg-soft: #0d1522;
+
+      --white: #f4f7fb;
+      --grey: #9aa8ba;
+      --grey-dark: #647287;
+
+      --line: rgba(255, 255, 255, 0.13);
+      --line-strong: rgba(255, 255, 255, 0.22);
+
+      --blue-dark: #2055dc;
+      --blue: #238bf0;
+      --blue-light: #19b5ef;
+
+      --max: 1440px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-width: 320px;
+      overflow-x: hidden;
+      background: var(--bg);
+      color: var(--white);
+
+      font-family:
+        "Segoe UI",
+        Inter,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 80px), var(--max));
+      margin-inline: auto;
+    }
+
+    /* ======================================================
+       ACCESSIBILITY
+    ====================================================== */
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 20px;
+      z-index: 100;
+      padding: 12px 18px;
+      background: var(--white);
+      color: var(--bg);
+      font-weight: 700;
+    }
+
+    .skip-link:focus {
+      top: 20px;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--blue-light);
+      outline-offset: 5px;
+    }
+
+    /* ======================================================
+       HEADER
+    ====================================================== */
+
+    .site-header {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 20;
+      padding: 28px 0;
+    }
+
+    .navigation {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    /* ======================================================
+       FORM-LITE LOGO
+    ====================================================== */
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 17px;
+    }
+
+    .brand-symbol {
+      width: 46px;
+      height: 61px;
+      flex-shrink: 0;
+      filter: drop-shadow(
+        0 12px 22px rgba(14, 89, 220, 0.18)
+      );
+    }
+
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .brand-name {
+      display: flex;
+      align-items: baseline;
+      font-size: 25px;
+      font-weight: 720;
+      line-height: 1;
+      letter-spacing: 0.018em;
+      white-space: nowrap;
+    }
+
+    .brand-form {
+      color: #ffffff;
+    }
+
+    .brand-lite {
+      background:
+        linear-gradient(
+          90deg,
+          #326fe8,
+          #27a7ed
+        );
+
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .brand-rule {
+      width: 100%;
+      height: 1px;
+      margin: 8px 0 6px;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(46, 114, 231, 0.86),
+          rgba(39, 167, 237, 0.14)
+        );
+    }
+
+    .brand-sub {
+      color: #8090a5;
+      font-size: 6.8px;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* ======================================================
+       NAVIGATION
+    ====================================================== */
+
+    .nav-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 17px;
+      padding-bottom: 8px;
+
+      border-bottom:
+        1px solid rgba(255, 255, 255, 0.5);
+
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+
+      transition:
+        color 0.2s ease,
+        gap 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .nav-contact:hover {
+      gap: 25px;
+      color: var(--blue-light);
+      border-color: var(--blue-light);
+    }
+
+    /* ======================================================
+       HERO
+    ====================================================== */
+
+    .hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      padding: 180px 0 100px;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(7, 12, 20, 1) 0%,
+          rgba(7, 12, 20, 0.98) 25%,
+          rgba(7, 12, 20, 0.86) 47%,
+          rgba(7, 12, 20, 0.37) 72%,
+          rgba(7, 12, 20, 0.1) 100%
+        ),
+        url("hero-frame.webp")
+        72% center / cover no-repeat,
+        #080d16;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 15%;
+      right: 7%;
+      width: min(36vw, 540px);
+      aspect-ratio: 1;
+      border: 1px solid rgba(51, 145, 229, 0.08);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 17%;
+      right: 18%;
+      width: 1px;
+      height: 66%;
+
+      background:
+        linear-gradient(
+          transparent,
+          rgba(73, 161, 231, 0.25),
+          transparent
+        );
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 5;
+      width: min(780px, 62%);
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 35px;
+      color: #62b6ef;
+      font-size: 10px;
+      font-weight: 650;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-line {
+      width: 34px;
+      height: 1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--blue-dark),
+          var(--blue-light)
+        );
+    }
+
+    h1 {
+      max-width: 850px;
+
+      font-size:
+        clamp(
+          54px,
+          6.5vw,
+          105px
+        );
+
+      font-weight: 620;
+      line-height: 0.93;
+      letter-spacing: -0.055em;
+      text-wrap: balance;
+    }
+
+    .hero-lead {
+      max-width: 620px;
+      margin-top: 40px;
+      color: #c2cbd6;
+
+      font-size:
+        clamp(
+          19px,
+          1.7vw,
+          27px
+        );
+
+      font-weight: 400;
+      line-height: 1.45;
+    }
+
+    .hero-text {
+      max-width: 610px;
+      margin-top: 22px;
+      color: var(--grey);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .primary-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 37px;
+      padding: 16px 22px;
+
+      background:
+        linear-gradient(
+          100deg,
+          var(--blue-dark),
+          var(--blue-light)
+        );
+
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 720;
+      letter-spacing: 0.19em;
+      text-transform: uppercase;
+
+      box-shadow:
+        0 15px 45px
+        rgba(27, 112, 224, 0.22);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .primary-button:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 20px 55px
+        rgba(27, 112, 224, 0.35);
+    }
+
+    /* ======================================================
+       POSITIONING STRIP
+    ====================================================== */
+
+    .positioning-strip {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+
+      background:
+        rgba(7, 12, 20, 0.98);
+    }
+
+    .positioning-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .positioning-item {
+      position: relative;
+      min-width: 0;
+      padding: 35px 52px 33px 0;
+    }
+
+    .positioning-item + .positioning-item {
+      padding-left: 35px;
+      border-left: 1px solid var(--line);
+    }
+
+    .positioning-number {
+      position: absolute;
+      top: 37px;
+      right: 24px;
+      color: #627084;
+      font-size: 9px;
+      letter-spacing: 0.18em;
+    }
+
+    .positioning-item-title {
+      max-width: 290px;
+      padding-right: 15px;
+
+      font-size:
+        clamp(
+          13px,
+          1.18vw,
+          17px
+        );
+
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .positioning-item-text {
+      margin-top: 9px;
+      color: #738197;
+      font-size: 8.5px;
+      line-height: 1.5;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* ======================================================
+       ENGINEERING SECTION
+    ====================================================== */
+
+    .engineering {
+      position: relative;
+      overflow: hidden;
+      padding: 155px 0;
+
+      background:
+        radial-gradient(
+          circle at 95% 80%,
+          rgba(34, 139, 240, 0.11),
+          transparent 34%
+        );
+    }
+
+    .engineering::after {
+      content: "";
+      position: absolute;
+      right: -14%;
+      bottom: -72%;
+      width: min(65vw, 940px);
+      aspect-ratio: 1;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 70px;
+      color: #6f7e92;
+      font-size: 9px;
+      font-weight: 650;
+      letter-spacing: 0.23em;
+      text-transform: uppercase;
+    }
+
+    .section-label::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--blue);
+    }
+
+    .engineering-grid {
+      position: relative;
+      z-index: 2;
+
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+
+      gap:
+        clamp(
+          70px,
+          10vw,
+          170px
+        );
+
+      align-items: center;
+    }
+
+    .engineering-title {
+      font-size:
+        clamp(
+          42px,
+          5.5vw,
+          82px
+        );
+
+      font-weight: 640;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+    }
+
+    .engineering-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .engineering-row + .engineering-row {
+      margin-top: 5px;
+    }
+
+    .engineering-x {
+      color: var(--blue);
+      font-size: 0.8em;
+      font-weight: 400;
+    }
+
+    .engineering-copy {
+      padding-left: 45px;
+      border-left: 1px solid var(--line-strong);
+    }
+
+    .engineering-copy p {
+      max-width: 570px;
+      color: var(--grey);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    /* ======================================================
+       COMING SOON
+    ====================================================== */
+
+    .coming-soon {
+      position: relative;
+      overflow: hidden;
+      padding: 150px 0;
+      background: #edf1f4;
+      color: #101722;
+    }
+
+    .coming-soon::after {
+      content: "";
+      position: absolute;
+      right: -12%;
+      bottom: -110%;
+
+      width:
+        min(
+          70vw,
+          1100px
+        );
+
+      aspect-ratio: 1;
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(32, 85, 220, 0.72),
+          rgba(25, 181, 239, 0.19),
+          transparent 72%
+        );
+
+      opacity: 0.22;
+      pointer-events: none;
+    }
+
+    .coming-soon .section-label {
+      color: #606d7e;
+    }
+
+    .coming-soon-grid {
+      position: relative;
+      z-index: 2;
+
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+
+      gap:
+        clamp(
+          60px,
+          10vw,
+          160px
+        );
+
+      align-items: end;
+    }
+
+    .coming-soon-title {
+      font-size:
+        clamp(
+          57px,
+          7.5vw,
+          112px
+        );
+
+      font-weight: 630;
+      line-height: 0.91;
+      letter-spacing: -0.055em;
+    }
+
+    .coming-soon-text {
+      padding-left: 38px;
+      border-left: 1px solid rgba(10, 20, 30, 0.22);
+      color: #5a6675;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    /* ======================================================
+       CONTACT
+    ====================================================== */
+
+    .contact {
+      padding: 140px 0 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+
+      gap:
+        clamp(
+          60px,
+          10vw,
+          160px
+        );
+
+      align-items: end;
+    }
+
+    .contact-title {
+      font-size:
+        clamp(
+          55px,
+          7vw,
+          100px
+        );
+
+      font-weight: 620;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+    }
+
+    .contact-info {
+      padding-left: 42px;
+      border-left: 1px solid var(--line-strong);
+    }
+
+    .contact-info p {
+      color: var(--grey);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .contact-email {
+      display: inline-block;
+      margin-top: 28px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #60b9ef;
+
+      font-size:
+        clamp(
+          20px,
+          2vw,
+          31px
+        );
+
+      transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .contact-email:hover {
+      color: var(--blue-light);
+      border-color: var(--blue-light);
+    }
+
+    /* ======================================================
+       FOOTER
+    ====================================================== */
+
+    .site-footer {
+      margin-top: 115px;
+      padding: 28px 0 33px;
+      border-top: 1px solid var(--line);
+      color: #637085;
+      font-size: 9px;
+      line-height: 1.5;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-claim {
+      text-align: right;
+    }
+
+    /* ======================================================
+       TABLET
+    ====================================================== */
+
+    @media (max-width: 1050px) {
+
+      .hero-content {
+        width: min(700px, 72%);
+      }
+
+      .positioning-strip-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .positioning-item,
+      .positioning-item + .positioning-item {
+        padding: 26px 55px 25px 0;
+        border-left: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .positioning-item:last-child {
+        border-bottom: 0;
+      }
+
+      .positioning-number {
+        top: 29px;
+        right: 0;
+      }
+
+      .positioning-item-title {
+        max-width: none;
+        font-size: 16px;
+      }
+
+      .engineering-grid,
+      .coming-soon-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 65px;
+      }
+
+      .engineering-copy,
+      .coming-soon-text,
+      .contact-info {
+        max-width: 650px;
+      }
+    }
+
+    /* ======================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 900px) {
+
+      .container {
+        width: calc(100% - 42px);
+      }
+
+      .hero {
+        min-height: 850px;
+        align-items: flex-end;
+        padding: 165px 0 75px;
+
+        background:
+          linear-gradient(
+            180deg,
+            rgba(7, 12, 20, 0.2) 0%,
+            rgba(7, 12, 20, 0.55) 28%,
+            rgba(7, 12, 20, 0.96) 59%,
+            rgba(7, 12, 20, 1) 100%
+          ),
+          url("hero-frame.webp")
+          68% center / cover no-repeat,
+          #080d16;
+      }
+
+      .hero-content {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      .container {
+        width: calc(100% - 34px);
+      }
+
+      .site-header {
+        padding: 18px 0;
+      }
+
+      .brand-symbol {
+        width: 34px;
+        height: 46px;
+      }
+
+      .brand {
+        gap: 11px;
+      }
+
+      .brand-name {
+        font-size: 19px;
+      }
+
+      .brand-rule {
+        margin: 6px 0 5px;
+      }
+
+      .brand-sub {
+        max-width: 205px;
+        overflow: hidden;
+        font-size: 5.3px;
+        letter-spacing: 0.11em;
+        text-overflow: ellipsis;
+      }
+
+      .nav-contact {
+        border: 0;
+        font-size: 0;
+      }
+
+      .nav-contact span {
+        display: grid;
+        width: 39px;
+        height: 39px;
+        place-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        font-size: 15px;
+      }
+
+      h1 {
+        font-size:
+          clamp(
+            48px,
+            15vw,
+            70px
+          );
+      }
+
+      .hero-lead {
+        font-size: 18px;
+      }
+
+      .engineering,
+      .coming-soon {
+        padding: 100px 0;
+      }
+
+      .engineering-title {
+        font-size:
+          clamp(
+            38px,
+            11vw,
+            60px
+          );
+      }
+
+      .engineering-row {
+        gap: 11px;
+      }
+
+      .engineering-copy,
+      .coming-soon-text,
+      .contact-info {
+        padding-left: 23px;
+      }
+
+      .contact {
+        padding-top: 100px;
+      }
+
+      .footer-grid {
+        flex-direction: column;
+      }
+
+      .footer-claim {
+        max-width: 330px;
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 420px) {
+
+      .brand-sub {
+        max-width: 175px;
+      }
+
+      .eyebrow {
+        font-size: 8px;
+        letter-spacing: 0.2em;
+      }
+
+      .positioning-item-title {
+        max-width: 280px;
+        font-size: 14px;
+      }
+
+      .contact-email {
+        font-size: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+
+  </style>
 </head>
+
 <body>
-<div>
-<h1>FORM-LITE</h1>
-<p>Engineering & Fertigung hochwertiger Fahrradrahmen.</p>
-</div>
+
+  #main-content
+    Zum Inhalt springen
+  </a>
+
+  <header class="site-header">
+
+    <div class="container navigation">
+
+      #top
+
+        <svg
+          class="brand-symbol"
+          viewBox="0 0 72 94"
+          role="img"
+          aria-label="Form-Lite Bildmarke"
+        >
+
+          <defs>
+
+            <linearGradient
+              id="logo-steel"
+              x1="0"
+              y1="0"
+              x2="1"
+              y2="0"
+            >
+              <stop
+                offset="0%"
+                stop-color="#132035"
+              />
+
+              <stop
+                offset="100%"
+                stop-color="#46566b"
+              />
+            </linearGradient>
+
+            <linearGradient
+              id="logo-blue"
+              x1="0"
+              y1="0"
+              x2="1"
+              y2="0"
+            >
+              <stop
+                offset="0%"
+                stop-color="#2055dc"
+              />
+
+              <stop
+                offset="55%"
+                stop-color="#238bf0"
+              />
+
+              <stop
+                offset="100%"
+                stop-color="#19b5ef"
+              />
+            </linearGradient>
+
+            <linearGradient
+              id="logo-edge"
+              x1="0"
+              y1="0"
+              x2="0"
+              y2="1"
+            >
+              <stop
+                offset="0%"
+                stop-color="#2d6cf0"
+              />
+
+              <stop
+                offset="100%"
+                stop-color="#1645b8"
+              />
+            </linearGradient>
+
+          </defs>
+
+          <path
+            d="M5 4 H56 L64 45 H10 Z"
+            fill="url(#logo-steel)"
+          />
+
+          <path
+            d="M10 47 H64 L70 90 H16 Z"
+            fill="url(#logo-blue)"
+          />
+
+          <path
+            d="M5 4 L10 47 L16 90 L12 90 L6 47 L1 4 Z"
+            fill="url(#logo-edge)"
+          />
+
+          <path
+            d="M10 45 H64 L64.4 48 H10.3 Z"
+            fill="#83ccf7"
+            opacity="0.55"
+          />
+
+        </svg>
+
+        <span class="brand-copy">
+
+          <span class="brand-name">
+
+            <span class="brand-form">
+              FORM
+            </span>
+
+            <span class="brand-lite">
+              -LITE
+            </span>
+
+          </span>
+
+          <span class="brand-rule"></span>
+
+          <span class="brand-sub">
+            Lite Mobility · Closer to the Market · Faster to Sustain
+          </span>
+
+        </span>
+
+      </a>
+
+      #contact
+        Contact
+
+        <span aria-hidden="true">
+          →
+        </span>
+      </a>
+
+    </div>
+
+  </header>
+
+  <main
+    id="main-content"
+    tabindex="-1"
+  >
+
+    <!-- ====================================================
+         HERO
+    ===================================================== -->
+
+    <section
+      class="hero"
+      id="top"
+    >
+
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+
+            <span
+              class="eyebrow-line"
+              aria-hidden="true"
+            ></span>
+
+            Engineering for a lighter tomorrow
+
+          </div>
+
+          <h1>
+            Engineering the next generation of bicycle frames.
+          </h1>
+
+          <p class="hero-lead">
+            Industrialized lightweight structures.
+            Made in Europe. Built to scale.
+          </p>
+
+          <p class="hero-text">
+            Form-Lite develops advanced manufacturing solutions
+            for high-performance bicycle frame structures,
+            combining innovative engineering, efficient production
+            and circular material strategies.
+          </p>
+
+          #contact
+            Contact us
+
+            <span aria-hidden="true">
+              →
+            </span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ====================================================
+         POSITIONING
+    ===================================================== -->
+
+    <section
+      class="positioning-strip"
+      aria-label="Form-Lite positioning"
+    >
+
+      <div class="container positioning-strip-grid">
+
+        <article class="positioning-item">
+
+          <span class="positioning-number">
+            01
+          </span>
+
+          <h2 class="positioning-item-title">
+            Lite Mobility
+          </h2>
+
+          <p class="positioning-item-text">
+            Engineering lightweight mobility
+          </p>
+
+        </article>
+
+        <article class="positioning-item">
+
+          <span class="positioning-number">
+            02
+          </span>
+
+          <h2 class="positioning-item-title">
+            Closer to the Market
+          </h2>
+
+          <p class="positioning-item-text">
+            European industrialization
+          </p>
+
+        </article>
+
+        <article class="positioning-item">
+
+          <span class="positioning-number">
+            03
+          </span>
+
+          <h2 class="positioning-item-title">
+            Faster to Sustain
+          </h2>
+
+          <p class="positioning-item-text">
+            Resource-efficient solutions
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- ====================================================
+         ENGINEERING / MANUFACTURING / MOBILITY
+    ===================================================== -->
+
+    <section class="engineering">
+
+      <div class="container">
+
+        <div class="section-label">
+          Form-Lite Approach
+        </div>
+
+        <div class="engineering-grid">
+
+          <div class="engineering-title">
+
+            <div class="engineering-row">
+              Engineering
+            </div>
+
+            <div class="engineering-row">
+
+              <span
+                class="engineering-x"
+                aria-hidden="true"
+              >
+                ×
+              </span>
+
+              Manufacturing
+
+            </div>
+
+            <div class="engineering-row">
+
+              <span
+                class="engineering-x"
+                aria-hidden="true"
+              >
+                ×
+              </span>
+
+              Mobility
+
+            </div>
+
+          </div>
+
+          <div class="engineering-copy">
+
+            <p>
+              We combine product engineering with advanced
+              manufacturing technologies to rethink how bicycle
+              frame structures can be developed and industrialized.
+              Our focus is on precise, scalable and
+              resource-efficient solutions for the next
+              generation of mobility.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ====================================================
+         COMING SOON
+    ===================================================== -->
+
+    <section class="coming-soon">
+
+      <div class="container">
+
+        <div class="section-label">
+          What's next
+        </div>
+
+        <div class="coming-soon-grid">
+
+          <h2 class="coming-soon-title">
+            Something new<br>
+            is taking shape.
+          </h2>
+
+          <p class="coming-soon-text">
+            Our new corporate website is currently
+            under development. More about Form-Lite,
+            our engineering approach and our technology
+            will follow.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ====================================================
+         CONTACT
+    ===================================================== -->
+
+    <section
+      class="contact"
+      id="contact"
+    >
+
+      <div class="container">
+
+        <div class="section-label">
+          Contact
+        </div>
+
+        <div class="contact-grid">
+
+          <h2 class="contact-title">
+            Let's<br>
+            connect.
+          </h2>
+
+          <div class="contact-info">
+
+            <p>
+              Form-Lite GmbH
+            </p>
+
+            <p>
+              Witten, Germany
+            </p>
+
+            <a
+              class="contact-email"
+              href="mailto:timo.druege@form-lite.com"
+            >
+              timo.druege@form-lite.com
+            </a>
+
+          </div>
+
+        </div>
+
+        <footer class="site-footer">
+
+          <div class="footer-grid">
+
+            <div>
+              © 2026 Form-Lite GmbH
+            </div>
+
+            <div class="footer-claim">
+              Lite Mobility · Closer to the Market · Faster to Sustain
+            </div>
+
+          </div>
+
+        </footer>
+
+      </div>
+
+    </section>
+
+  </main>
+
 </body>
+
 </html>
