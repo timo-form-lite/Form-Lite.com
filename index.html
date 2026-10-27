@@ -816,104 +816,230 @@
 
     @media (max-width: 700px) {
 
-      .container {
-        width: calc(100% - 34px);
-      }
+  .container {
+    width: calc(100% - 34px);
+  }
 
-      .site-header {
-        padding: 18px 0;
-      }
+  /* HEADER */
 
-      .brand-symbol {
-        width: 34px;
-        height: 46px;
-      }
+  .site-header {
+    padding: 18px 0;
+  }
 
-      .brand {
-        gap: 11px;
-      }
+  .brand {
+    gap: 11px;
+  }
 
-      .brand-name {
-        font-size: 19px;
-      }
+  .brand-symbol {
+    width: 34px;
+    height: 46px;
+    flex-shrink: 0;
+  }
 
-      .brand-rule {
-        margin: 6px 0 5px;
-      }
+  .brand-name {
+    font-size: 19px;
+  }
 
-      .brand-sub {
-        max-width: 205px;
-        overflow: hidden;
-        font-size: 5.3px;
-        letter-spacing: 0.11em;
-        text-overflow: ellipsis;
-      }
+  .brand-rule {
+    margin: 6px 0 5px;
+  }
 
-      .nav-contact {
-        border: 0;
-        font-size: 0;
-      }
+  .brand-sub {
+    max-width: 205px;
+    overflow: hidden;
+    font-size: 5.3px;
+    line-height: 1.3;
+    letter-spacing: 0.11em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
-      .nav-contact span {
-        display: grid;
-        width: 39px;
-        height: 39px;
-        place-items: center;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        font-size: 15px;
-      }
+  .nav-contact {
+    border: 0;
+    font-size: 0;
+  }
 
-      h1 {
-        font-size:
-          clamp(
-            48px,
-            15vw,
-            70px
-          );
-      }
+  .nav-contact span {
+    display: grid;
+    width: 39px;
+    height: 39px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    font-size: 15px;
+  }
 
-      .hero-lead {
-        font-size: 18px;
-      }
 
-      .engineering,
-      .coming-soon {
-        padding: 100px 0;
-      }
+  /* HERO */
 
-      .engineering-title {
-        font-size:
-          clamp(
-            38px,
-            11vw,
-            60px
-          );
-      }
+  h1 {
+    font-size: clamp(46px, 14vw, 68px);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+  }
 
-      .engineering-row {
-        gap: 11px;
-      }
+  .hero-lead {
+    font-size: 18px;
+    line-height: 1.45;
+  }
 
-      .engineering-copy,
-      .coming-soon-text,
-      .contact-info {
-        padding-left: 23px;
-      }
+  .hero-text {
+    width: 100%;
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-wrap: break-word;
+  }
 
-      .contact {
-        padding-top: 100px;
-      }
 
-      .footer-grid {
-        flex-direction: column;
-      }
+  /* ENGINEERING SECTION */
 
-      .footer-claim {
-        max-width: 330px;
-        text-align: left;
-      }
-    }
+  .engineering,
+  .coming-soon {
+    padding: 100px 0;
+  }
 
+  .engineering-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: 100%;
+    gap: 48px;
+  }
+
+  .engineering-title {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    font-size: clamp(29px, 8.6vw, 49px);
+    line-height: 1.04;
+    letter-spacing: -0.05em;
+  }
+
+  .engineering-row {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    gap: 6px;
+    white-space: nowrap;
+  }
+
+  .engineering-x {
+    flex: 0 0 auto;
+    font-size: 0.68em;
+  }
+
+  .engineering-copy {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    padding-left: 16px;
+    padding-right: 4px;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.20);
+
+    overflow: visible;
+  }
+
+  .engineering-copy p {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    margin: 0;
+
+    color: var(--grey);
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    white-space: normal;
+    overflow: visible;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+
+  /* COMING SOON */
+
+  .coming-soon-grid {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    gap: 48px;
+  }
+
+  .coming-soon-title {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: clamp(48px, 13vw, 72px);
+    line-height: 0.94;
+  }
+
+  .coming-soon-text {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    padding-left: 16px;
+    padding-right: 4px;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+
+  /* CONTACT */
+
+  .contact {
+    padding-top: 100px;
+  }
+
+  .contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    gap: 48px;
+  }
+
+  .contact-info {
+    width: 100%;
+    max-width: 100%;
+
+    padding-left: 16px;
+    padding-right: 4px;
+  }
+
+  .contact-email {
+    max-width: 100%;
+    font-size: clamp(17px, 5vw, 22px);
+    overflow-wrap: anywhere;
+  }
+
+
+  /* FOOTER */
+
+  .footer-grid {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .footer-claim {
+    max-width: 100%;
+    text-align: left;
+    line-height: 1.6;
+  }
+
+}
     @media (max-width: 420px) {
 
       .brand-sub {
