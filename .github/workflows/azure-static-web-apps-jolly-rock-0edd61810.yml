@@ -10,16 +10,41 @@ on:
       - main
 
 jobs:
- build_and_deploy_job:
+build_and_deploy_job:
   if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
   runs-on: ubuntu-latest
   name: Build and Deploy Job
 
   steps:
-    - uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
       with:
-        submodules: true
+        submodules: false
         lfs: false
+
+    - name: Validate website files
+      shell: bash
+      run: |
+        echo "Current directory:"
+        pwd
+
+        echo "Repository root:"
+        ls -la
+
+        echo "HTML files found:"
+        find . -maxdepth 3 -type f \( -iname "*.html" -o -iname "*.htm" \) -print
+
+        echo "Checking index.html:"
+        test -f "./index.html"
+
+        echo "File information:"
+        file "./index.html"
+
+        echo "File size:"
+        wc -c "./index.html"
+
+        echo "First five lines:"
+        head -n 5 "./index.html"
 
     - name: Build And Deploy
       id: builddeploy
@@ -28,7 +53,7 @@ jobs:
         azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_JOLLY_ROCK_0EDD61810 }}
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         action: "upload"
-        app_location: "/"
+        app_location: "."
         api_location: ""
         skip_app_build: true
         
