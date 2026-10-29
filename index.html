@@ -451,112 +451,149 @@
       text-transform: uppercase;
     }
 
-    /* ======================================================
-       ENGINEERING SECTION
-    ====================================================== */
+/* ======================================================
+   ENGINEERING SECTION
+====================================================== */
 
-    .engineering {
-      position: relative;
-      overflow: hidden;
-      padding: 155px 0;
+.engineering {
+  position: relative;
+  overflow: hidden;
+  padding: 155px 0;
 
-      background:
-        radial-gradient(
-          circle at 95% 80%,
-          rgba(34, 139, 240, 0.11),
-          transparent 34%
-        );
-    }
+  background:
+    radial-gradient(
+      circle at 95% 80%,
+      rgba(34, 139, 240, 0.11),
+      transparent 34%
+    );
+}
 
-    .engineering::after {
-      content: "";
-      position: absolute;
-      right: -14%;
-      bottom: -72%;
-      width: min(65vw, 940px);
-      aspect-ratio: 1;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 50%;
-      pointer-events: none;
-    }
+.engineering::after {
+  content: "";
+  position: absolute;
+  right: -14%;
+  bottom: -72%;
+  width: min(65vw, 940px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  pointer-events: none;
+}
 
-    .section-label {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 70px;
-      color: #6f7e92;
-      font-size: 9px;
-      font-weight: 650;
-      letter-spacing: 0.23em;
-      text-transform: uppercase;
-    }
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 70px;
+  color: #6f7e92;
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 0.23em;
+  text-transform: uppercase;
+}
 
-    .section-label::before {
-      content: "";
-      width: 28px;
-      height: 1px;
-      background: var(--blue);
-    }
+.section-label::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--blue);
+}
 
-    .engineering-grid {
-      position: relative;
-      z-index: 2;
+.engineering-grid {
+  position: relative;
+  z-index: 2;
 
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
 
-      gap:
-        clamp(
-          70px,
-          10vw,
-          170px
-        );
+  gap:
+    clamp(
+      70px,
+      10vw,
+      170px
+    );
 
-      align-items: center;
-    }
+  align-items: center;
+}
 
-    .engineering-title {
-      font-size:
-        clamp(
-          42px,
-          5.5vw,
-          82px
-        );
 
-      font-weight: 640;
-      line-height: 1;
-      letter-spacing: -0.04em;
-      text-transform: uppercase;
-    }
+/* HEADLINE / THREE CORE AREAS */
 
-    .engineering-row {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
+.engineering-title {
+  font-size:
+    clamp(
+      42px,
+      5.5vw,
+      82px
+    );
 
-    .engineering-row + .engineering-row {
-      margin-top: 5px;
-    }
+  font-weight: 640;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
 
-    .engineering-x {
-      color: var(--blue);
-      font-size: 0.8em;
-      font-weight: 400;
-    }
 
-    .engineering-copy {
-      padding-left: 45px;
-      border-left: 1px solid var(--line-strong);
-    }
+/* EACH ROW */
 
-    .engineering-copy p {
-      max-width: 570px;
-      color: var(--grey);
-      font-size: 17px;
-      line-height: 1.8;
-    }
+.engineering-row {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.engineering-row + .engineering-row {
+  margin-top: 8px;
+}
+
+
+/* BICYCLE FRAME ICON */
+
+.engineering-frame-icon {
+  width: 0.72em;
+  height: 0.72em;
+
+  flex: 0 0 0.72em;
+
+  fill: none;
+
+  stroke: var(--blue);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  overflow: visible;
+}
+
+
+/* TEXT NEXT TO ICON */
+
+.engineering-row span {
+  min-width: 0;
+}
+
+
+/* DESCRIPTION */
+
+.engineering-copy {
+  padding-left: 45px;
+
+  border-left:
+    1px solid var(--line-strong);
+}
+
+.engineering-copy p {
+  max-width: 570px;
+
+  color: var(--grey);
+
+  font-size: 17px;
+  line-height: 1.8;
+}
 
     /* ======================================================
        COMING SOON
@@ -899,73 +936,85 @@
     padding: 100px 0;
   }
 
-  .engineering-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    width: 100%;
-    max-width: 100%;
-    gap: 48px;
-  }
+.engineering-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
 
-  .engineering-title {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
+  width: 100%;
+  max-width: 100%;
 
-    font-size: clamp(29px, 8.6vw, 49px);
-    line-height: 1.04;
-    letter-spacing: -0.05em;
-  }
+  gap: 48px;
+}
 
-  .engineering-row {
-    display: flex;
-    align-items: center;
+.engineering-title {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
+  font-size: clamp(27px, 7.9vw, 47px);
+  line-height: 1.04;
+  letter-spacing: -0.05em;
+}
 
-    gap: 6px;
-    white-space: nowrap;
-  }
+.engineering-row {
+  display: flex;
+  align-items: center;
 
-  .engineering-x {
-    flex: 0 0 auto;
-    font-size: 0.68em;
-  }
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 
-  .engineering-copy {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
+  gap: 8px;
 
-    padding-left: 16px;
-    padding-right: 4px;
+  white-space: nowrap;
+}
 
-    border-left: 1px solid rgba(255, 255, 255, 0.20);
+.engineering-row + .engineering-row {
+  margin-top: 7px;
+}
 
-    overflow: visible;
-  }
+.engineering-frame-icon {
+  width: 0.64em;
+  height: 0.64em;
 
-  .engineering-copy p {
-    display: block;
+  flex: 0 0 0.64em;
 
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
+  stroke-width: 3.4;
+}
 
-    margin: 0;
+.engineering-copy {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 
-    color: var(--grey);
+  padding-left: 16px;
+  padding-right: 4px;
 
-    font-size: 15px;
-    line-height: 1.7;
+  border-left:
+    1px solid rgba(255, 255, 255, 0.20);
 
-    white-space: normal;
-    overflow: visible;
-    overflow-wrap: anywhere;
-    word-break: normal;
-  }
+  overflow: visible;
+}
+
+.engineering-copy p {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin: 0;
+
+  color: var(--grey);
+
+  font-size: 15px;
+  line-height: 1.7;
+
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
 
 
   /* COMING SOON */
