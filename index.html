@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Form-Lite GmbH | Engineering the next generation of bicycle frames</title>
+  <title>
+    Form-Lite GmbH | Engineering the next generation of bicycle frames
+  </title>
 
   <meta
     name="description"
@@ -13,10 +15,9 @@
   >
 
   <meta name="theme-color" content="#080d16">
-
-  <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon">
-  <link rel="icon" href="/favicon.png?v=2" type="image/png">
-  <link rel="apple-touch-icon" href="/favicon.png?v=2">
+<link rel="icon" href="/favicon.ico?v=2" type="image/x-icon">
+<link rel="icon" href="/favicon.png?v=2" type="image/png">
+<link rel="apple-touch-icon" href="favicon.png">
 
   <style>
 
@@ -51,7 +52,6 @@
     body {
       min-width: 320px;
       overflow-x: hidden;
-
       background: var(--bg);
       color: var(--white);
 
@@ -75,7 +75,6 @@
       margin-inline: auto;
     }
 
-
     /* ======================================================
        ACCESSIBILITY
     ====================================================== */
@@ -84,14 +83,10 @@
       position: absolute;
       top: -100px;
       left: 20px;
-
       z-index: 100;
-
       padding: 12px 18px;
-
       background: var(--white);
       color: var(--bg);
-
       font-weight: 700;
     }
 
@@ -104,32 +99,25 @@
       outline-offset: 5px;
     }
 
-
     /* ======================================================
        HEADER
     ====================================================== */
 
     .site-header {
       position: absolute;
-
       top: 0;
       right: 0;
       left: 0;
-
       z-index: 20;
-
       padding: 28px 0;
     }
 
     .navigation {
       display: flex;
-
       align-items: center;
       justify-content: space-between;
-
       gap: 40px;
     }
-
 
     /* ======================================================
        FORM-LITE LOGO
@@ -138,40 +126,31 @@
     .brand {
       display: inline-flex;
       align-items: center;
-
       gap: 17px;
     }
 
     .brand-symbol {
       width: 46px;
       height: 61px;
-
       flex-shrink: 0;
-
-      filter:
-        drop-shadow(
-          0 12px 22px
-          rgba(14, 89, 220, 0.18)
-        );
+      filter: drop-shadow(
+        0 12px 22px rgba(14, 89, 220, 0.18)
+      );
     }
 
     .brand-copy {
       display: flex;
       flex-direction: column;
-
       min-width: 0;
     }
 
     .brand-name {
       display: flex;
       align-items: baseline;
-
       font-size: 25px;
       font-weight: 720;
       line-height: 1;
-
       letter-spacing: 0.018em;
-
       white-space: nowrap;
     }
 
@@ -189,14 +168,12 @@
 
       background-clip: text;
       -webkit-background-clip: text;
-
       color: transparent;
     }
 
     .brand-rule {
       width: 100%;
       height: 1px;
-
       margin: 8px 0 6px;
 
       background:
@@ -209,17 +186,13 @@
 
     .brand-sub {
       color: #8090a5;
-
       font-size: 6.8px;
       font-weight: 600;
       line-height: 1.3;
-
       letter-spacing: 0.2em;
-
       text-transform: uppercase;
       white-space: nowrap;
     }
-
 
     /* ======================================================
        NAVIGATION
@@ -227,23 +200,16 @@
 
     .nav-contact {
       display: inline-flex;
-
       align-items: center;
-
       gap: 17px;
-
       padding-bottom: 8px;
 
       border-bottom:
         1px solid rgba(255, 255, 255, 0.5);
 
-      color: var(--white);
-
       font-size: 10px;
       font-weight: 700;
-
       letter-spacing: 0.2em;
-
       text-transform: uppercase;
 
       transition:
@@ -254,12 +220,9 @@
 
     .nav-contact:hover {
       gap: 25px;
-
       color: var(--blue-light);
-
       border-color: var(--blue-light);
     }
-
 
     /* ======================================================
        HERO
@@ -267,14 +230,10 @@
 
     .hero {
       position: relative;
-
       display: flex;
       align-items: center;
-
       min-height: 100vh;
-
       overflow: hidden;
-
       padding: 180px 0 100px;
 
       background:
@@ -284,7 +243,7 @@
           rgba(7, 12, 20, 0.98) 25%,
           rgba(7, 12, 20, 0.86) 47%,
           rgba(7, 12, 20, 0.37) 72%,
-          rgba(7, 12, 20, 0.10) 100%
+          rgba(7, 12, 20, 0.1) 100%
         ),
         url("hero-frame.webp")
         72% center / cover no-repeat,
@@ -293,32 +252,21 @@
 
     .hero::before {
       content: "";
-
       position: absolute;
-
       top: 15%;
       right: 7%;
-
       width: min(36vw, 540px);
-
       aspect-ratio: 1;
-
-      border:
-        1px solid rgba(51, 145, 229, 0.08);
-
+      border: 1px solid rgba(51, 145, 229, 0.08);
       border-radius: 50%;
-
       pointer-events: none;
     }
 
     .hero::after {
       content: "";
-
       position: absolute;
-
       top: 17%;
       right: 18%;
-
       width: 1px;
       height: 66%;
 
@@ -334,28 +282,19 @@
 
     .hero-content {
       position: relative;
-
       z-index: 5;
-
       width: min(780px, 62%);
     }
 
     .eyebrow {
       display: flex;
-
       align-items: center;
-
       gap: 14px;
-
       margin-bottom: 35px;
-
       color: #62b6ef;
-
       font-size: 10px;
       font-weight: 650;
-
       letter-spacing: 0.28em;
-
       text-transform: uppercase;
     }
 
@@ -382,19 +321,14 @@
         );
 
       font-weight: 620;
-
       line-height: 0.93;
-
       letter-spacing: -0.055em;
-
       text-wrap: balance;
     }
 
     .hero-lead {
       max-width: 620px;
-
       margin-top: 40px;
-
       color: #c2cbd6;
 
       font-size:
@@ -410,26 +344,18 @@
 
     .hero-text {
       max-width: 610px;
-
       margin-top: 22px;
-
       color: var(--grey);
-
       font-size: 15px;
-
       line-height: 1.75;
     }
 
     .primary-button {
       display: inline-flex;
-
       align-items: center;
       justify-content: center;
-
       gap: 24px;
-
       margin-top: 37px;
-
       padding: 16px 22px;
 
       background:
@@ -440,12 +366,9 @@
         );
 
       color: #ffffff;
-
       font-size: 10px;
       font-weight: 720;
-
       letter-spacing: 0.19em;
-
       text-transform: uppercase;
 
       box-shadow:
@@ -465,7 +388,6 @@
         rgba(27, 112, 224, 0.35);
     }
 
-
     /* ======================================================
        POSITIONING STRIP
     ====================================================== */
@@ -480,42 +402,31 @@
 
     .positioning-strip-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
 
     .positioning-item {
       position: relative;
-
       min-width: 0;
-
       padding: 35px 52px 33px 0;
     }
 
     .positioning-item + .positioning-item {
       padding-left: 35px;
-
-      border-left:
-        1px solid var(--line);
+      border-left: 1px solid var(--line);
     }
 
     .positioning-number {
       position: absolute;
-
       top: 37px;
       right: 24px;
-
       color: #627084;
-
       font-size: 9px;
-
       letter-spacing: 0.18em;
     }
 
     .positioning-item-title {
       max-width: 290px;
-
       padding-right: 15px;
 
       font-size:
@@ -526,38 +437,27 @@
         );
 
       font-weight: 700;
-
       line-height: 1.35;
-
       letter-spacing: 0.13em;
-
       text-transform: uppercase;
     }
 
     .positioning-item-text {
       margin-top: 9px;
-
       color: #738197;
-
       font-size: 8.5px;
-
       line-height: 1.5;
-
       letter-spacing: 0.15em;
-
       text-transform: uppercase;
     }
 
-
     /* ======================================================
-       FORM-LITE APPROACH
+       ENGINEERING SECTION
     ====================================================== */
 
     .engineering {
       position: relative;
-
       overflow: hidden;
-
       padding: 155px 0;
 
       background:
@@ -570,150 +470,93 @@
 
     .engineering::after {
       content: "";
-
       position: absolute;
-
       right: -14%;
       bottom: -72%;
-
       width: min(65vw, 940px);
-
       aspect-ratio: 1;
-
-      border:
-        1px solid rgba(255, 255, 255, 0.05);
-
+      border: 1px solid rgba(255, 255, 255, 0.05);
       border-radius: 50%;
-
       pointer-events: none;
     }
 
     .section-label {
       display: flex;
-
       align-items: center;
-
       gap: 14px;
-
       margin-bottom: 70px;
-
       color: #6f7e92;
-
       font-size: 9px;
       font-weight: 650;
-
       letter-spacing: 0.23em;
-
       text-transform: uppercase;
     }
 
     .section-label::before {
       content: "";
-
       width: 28px;
       height: 1px;
-
       background: var(--blue);
     }
 
     .engineering-grid {
       position: relative;
-
       z-index: 2;
 
       display: grid;
-
-      grid-template-columns:
-        minmax(0, 1.05fr)
-        minmax(0, 0.95fr);
+      grid-template-columns: 1.05fr 0.95fr;
 
       gap:
         clamp(
           70px,
-          8vw,
-          140px
+          10vw,
+          170px
         );
 
       align-items: center;
     }
 
     .engineering-title {
-      min-width: 0;
-
       font-size:
         clamp(
-          36px,
-          4.6vw,
-          72px
+          42px,
+          5.5vw,
+          82px
         );
 
       font-weight: 640;
-
       line-height: 1;
-
       letter-spacing: -0.04em;
-
       text-transform: uppercase;
     }
 
     .engineering-row {
       display: flex;
-
       align-items: center;
-
-      width: 100%;
-
-      min-width: 0;
-
-      gap: 20px;
+      gap: 18px;
     }
 
     .engineering-row + .engineering-row {
-      margin-top: 12px;
+      margin-top: 5px;
     }
 
-    .engineering-frame-icon {
-      width: 0.76em;
-      height: 0.76em;
-
-      flex: 0 0 0.76em;
-
-      fill: none;
-
-      stroke: var(--blue);
-      stroke-width: 3;
-
-      stroke-linecap: round;
-      stroke-linejoin: round;
-
-      overflow: visible;
-    }
-
-    .engineering-label {
-      min-width: 0;
-
-      white-space: nowrap;
+    .engineering-x {
+      color: var(--blue);
+      font-size: 0.8em;
+      font-weight: 400;
     }
 
     .engineering-copy {
-      min-width: 0;
-
       padding-left: 45px;
-
-      border-left:
-        1px solid var(--line-strong);
+      border-left: 1px solid var(--line-strong);
     }
 
     .engineering-copy p {
       max-width: 570px;
-
       color: var(--grey);
-
       font-size: 17px;
-
       line-height: 1.8;
     }
-
 
     /* ======================================================
        COMING SOON
@@ -721,21 +564,15 @@
 
     .coming-soon {
       position: relative;
-
       overflow: hidden;
-
       padding: 150px 0;
-
       background: #edf1f4;
-
       color: #101722;
     }
 
     .coming-soon::after {
       content: "";
-
       position: absolute;
-
       right: -12%;
       bottom: -110%;
 
@@ -746,7 +583,6 @@
         );
 
       aspect-ratio: 1;
-
       border-radius: 50%;
 
       background:
@@ -758,7 +594,6 @@
         );
 
       opacity: 0.22;
-
       pointer-events: none;
     }
 
@@ -768,13 +603,10 @@
 
     .coming-soon-grid {
       position: relative;
-
       z-index: 2;
 
       display: grid;
-
-      grid-template-columns:
-        1.25fr 0.75fr;
+      grid-template-columns: 1.25fr 0.75fr;
 
       gap:
         clamp(
@@ -795,26 +627,17 @@
         );
 
       font-weight: 630;
-
       line-height: 0.91;
-
       letter-spacing: -0.055em;
     }
 
     .coming-soon-text {
       padding-left: 38px;
-
-      border-left:
-        1px solid
-        rgba(10, 20, 30, 0.22);
-
+      border-left: 1px solid rgba(10, 20, 30, 0.22);
       color: #5a6675;
-
       font-size: 17px;
-
       line-height: 1.8;
     }
-
 
     /* ======================================================
        CONTACT
@@ -826,9 +649,7 @@
 
     .contact-grid {
       display: grid;
-
-      grid-template-columns:
-        0.9fr 1.1fr;
+      grid-template-columns: 0.9fr 1.1fr;
 
       gap:
         clamp(
@@ -849,36 +670,26 @@
         );
 
       font-weight: 620;
-
       line-height: 0.9;
-
       letter-spacing: -0.05em;
     }
 
     .contact-info {
       padding-left: 42px;
-
-      border-left:
-        1px solid var(--line-strong);
+      border-left: 1px solid var(--line-strong);
     }
 
     .contact-info p {
       color: var(--grey);
-
       font-size: 15px;
-
       line-height: 1.8;
     }
 
     .contact-email {
       display: inline-block;
-
       margin-top: 28px;
-
       padding-bottom: 6px;
-
-      border-bottom:
-        1px solid #60b9ef;
+      border-bottom: 1px solid #60b9ef;
 
       font-size:
         clamp(
@@ -894,10 +705,8 @@
 
     .contact-email:hover {
       color: var(--blue-light);
-
       border-color: var(--blue-light);
     }
-
 
     /* ======================================================
        FOOTER
@@ -905,35 +714,24 @@
 
     .site-footer {
       margin-top: 115px;
-
       padding: 28px 0 33px;
-
-      border-top:
-        1px solid var(--line);
-
+      border-top: 1px solid var(--line);
       color: #637085;
-
       font-size: 9px;
-
       line-height: 1.5;
-
       letter-spacing: 0.09em;
-
       text-transform: uppercase;
     }
 
     .footer-grid {
       display: flex;
-
       justify-content: space-between;
-
       gap: 30px;
     }
 
     .footer-claim {
       text-align: right;
     }
-
 
     /* ======================================================
        TABLET
@@ -952,11 +750,8 @@
       .positioning-item,
       .positioning-item + .positioning-item {
         padding: 26px 55px 25px 0;
-
         border-left: 0;
-
-        border-bottom:
-          1px solid var(--line);
+        border-bottom: 1px solid var(--line);
       }
 
       .positioning-item:last-child {
@@ -965,13 +760,11 @@
 
       .positioning-number {
         top: 29px;
-
         right: 0;
       }
 
       .positioning-item-title {
         max-width: none;
-
         font-size: 16px;
       }
 
@@ -979,7 +772,6 @@
       .coming-soon-grid,
       .contact-grid {
         grid-template-columns: 1fr;
-
         gap: 65px;
       }
 
@@ -988,17 +780,7 @@
       .contact-info {
         max-width: 650px;
       }
-
-      .engineering-title {
-        font-size:
-          clamp(
-            34px,
-            6.4vw,
-            64px
-          );
-      }
     }
-
 
     /* ======================================================
        MOBILE
@@ -1007,22 +789,18 @@
     @media (max-width: 900px) {
 
       .container {
-        width:
-          calc(100% - 42px);
+        width: calc(100% - 42px);
       }
 
       .hero {
         min-height: 850px;
-
         align-items: flex-end;
-
-        padding:
-          165px 0 75px;
+        padding: 165px 0 75px;
 
         background:
           linear-gradient(
             180deg,
-            rgba(7, 12, 20, 0.20) 0%,
+            rgba(7, 12, 20, 0.2) 0%,
             rgba(7, 12, 20, 0.55) 28%,
             rgba(7, 12, 20, 0.96) 59%,
             rgba(7, 12, 20, 1) 100%
@@ -1037,325 +815,232 @@
       }
     }
 
-
     @media (max-width: 700px) {
 
-      .container {
-        width:
-          calc(100% - 34px);
-      }
+  .container {
+    width: calc(100% - 34px);
+  }
+
+  /* HEADER */
+
+  .site-header {
+    padding: 18px 0;
+  }
+
+  .brand {
+    gap: 11px;
+  }
+
+  .brand-symbol {
+    width: 34px;
+    height: 46px;
+    flex-shrink: 0;
+  }
+
+  .brand-name {
+    font-size: 19px;
+  }
+
+  .brand-rule {
+    margin: 6px 0 5px;
+  }
+
+  .brand-sub {
+    max-width: 205px;
+    overflow: hidden;
+    font-size: 5.3px;
+    line-height: 1.3;
+    letter-spacing: 0.11em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .nav-contact {
+    border: 0;
+    font-size: 0;
+  }
+
+  .nav-contact span {
+    display: grid;
+    width: 39px;
+    height: 39px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    font-size: 15px;
+  }
+
+
+  /* HERO */
+
+  h1 {
+    font-size: clamp(46px, 14vw, 68px);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+  }
+
+  .hero-lead {
+    font-size: 18px;
+    line-height: 1.45;
+  }
+
+  .hero-text {
+    width: 100%;
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-wrap: break-word;
+  }
+
+
+  /* ENGINEERING SECTION */
+
+  .engineering,
+  .coming-soon {
+    padding: 100px 0;
+  }
+
+  .engineering-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: 100%;
+    gap: 48px;
+  }
+
+  .engineering-title {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    font-size: clamp(29px, 8.6vw, 49px);
+    line-height: 1.04;
+    letter-spacing: -0.05em;
+  }
+
+  .engineering-row {
+    display: flex;
+    align-items: center;
 
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
 
-      /* HEADER */
+    gap: 6px;
+    white-space: nowrap;
+  }
 
-      .site-header {
-        padding: 18px 0;
-      }
+  .engineering-x {
+    flex: 0 0 auto;
+    font-size: 0.68em;
+  }
 
-      .brand {
-        gap: 11px;
-      }
+  .engineering-copy {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
 
-      .brand-symbol {
-        width: 34px;
-        height: 46px;
+    padding-left: 16px;
+    padding-right: 4px;
 
-        flex-shrink: 0;
-      }
+    border-left: 1px solid rgba(255, 255, 255, 0.20);
 
-      .brand-name {
-        font-size: 19px;
-      }
+    overflow: visible;
+  }
 
-      .brand-rule {
-        margin: 6px 0 5px;
-      }
+  .engineering-copy p {
+    display: block;
 
-      .brand-sub {
-        max-width: 205px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
 
-        overflow: hidden;
+    margin: 0;
 
-        font-size: 5.3px;
+    color: var(--grey);
 
-        line-height: 1.3;
+    font-size: 15px;
+    line-height: 1.7;
 
-        letter-spacing: 0.11em;
+    white-space: normal;
+    overflow: visible;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
 
-        text-overflow: ellipsis;
 
-        white-space: nowrap;
-      }
+  /* COMING SOON */
 
-      .nav-contact {
-        border: 0;
+  .coming-soon-grid {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    gap: 48px;
+  }
 
-        font-size: 0;
-      }
+  .coming-soon-title {
+    width: 100%;
+    max-width: 100%;
 
-      .nav-contact span {
-        display: grid;
+    font-size: clamp(48px, 13vw, 72px);
+    line-height: 0.94;
+  }
 
-        width: 39px;
-        height: 39px;
+  .coming-soon-text {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
 
-        place-items: center;
+    padding-left: 16px;
+    padding-right: 4px;
 
-        border:
-          1px solid
-          rgba(255, 255, 255, 0.25);
+    font-size: 15px;
+    line-height: 1.7;
 
-        font-size: 15px;
-      }
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
 
 
-      /* HERO */
+  /* CONTACT */
 
-      h1 {
-        font-size:
-          clamp(
-            46px,
-            14vw,
-            68px
-          );
+  .contact {
+    padding-top: 100px;
+  }
 
-        line-height: 0.95;
+  .contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    gap: 48px;
+  }
 
-        letter-spacing: -0.05em;
-      }
+  .contact-info {
+    width: 100%;
+    max-width: 100%;
 
-      .hero-lead {
-        font-size: 18px;
+    padding-left: 16px;
+    padding-right: 4px;
+  }
 
-        line-height: 1.45;
-      }
+  .contact-email {
+    max-width: 100%;
+    font-size: clamp(17px, 5vw, 22px);
+    overflow-wrap: anywhere;
+  }
 
-      .hero-text {
-        width: 100%;
-        max-width: 100%;
 
-        font-size: 15px;
+  /* FOOTER */
 
-        line-height: 1.7;
+  .footer-grid {
+    flex-direction: column;
+    gap: 16px;
+  }
 
-        overflow-wrap: break-word;
-      }
+  .footer-claim {
+    max-width: 100%;
+    text-align: left;
+    line-height: 1.6;
+  }
 
-
-      /* FORM-LITE APPROACH */
-
-      .engineering,
-      .coming-soon {
-        padding: 100px 0;
-      }
-
-      .engineering-grid {
-        display: grid;
-
-        grid-template-columns:
-          minmax(0, 1fr);
-
-        width: 100%;
-        max-width: 100%;
-
-        gap: 48px;
-      }
-
-      .engineering-title {
-        width: 100%;
-        max-width: 100%;
-
-        min-width: 0;
-
-        font-size:
-          clamp(
-            25px,
-            7.3vw,
-            43px
-          );
-
-        line-height: 1.05;
-
-        letter-spacing: -0.045em;
-      }
-
-      .engineering-row {
-        display: flex;
-
-        align-items: center;
-
-        width: 100%;
-        max-width: 100%;
-
-        min-width: 0;
-
-        gap: 9px;
-      }
-
-      .engineering-row + .engineering-row {
-        margin-top: 9px;
-      }
-
-      .engineering-frame-icon {
-        width: 0.72em;
-        height: 0.72em;
-
-        flex: 0 0 0.72em;
-
-        stroke-width: 3.2;
-      }
-
-      .engineering-label {
-        min-width: 0;
-
-        white-space: nowrap;
-      }
-
-      .engineering-copy {
-        width: 100%;
-        max-width: 100%;
-
-        min-width: 0;
-
-        padding-left: 16px;
-        padding-right: 4px;
-
-        border-left:
-          1px solid
-          rgba(255, 255, 255, 0.20);
-
-        overflow: visible;
-      }
-
-      .engineering-copy p {
-        display: block;
-
-        width: 100%;
-        max-width: 100%;
-
-        min-width: 0;
-
-        margin: 0;
-
-        color: var(--grey);
-
-        font-size: 15px;
-
-        line-height: 1.7;
-
-        white-space: normal;
-
-        overflow: visible;
-
-        overflow-wrap: anywhere;
-
-        word-break: normal;
-      }
-
-
-      /* COMING SOON */
-
-      .coming-soon-grid {
-        grid-template-columns:
-          minmax(0, 1fr);
-
-        width: 100%;
-
-        gap: 48px;
-      }
-
-      .coming-soon-title {
-        width: 100%;
-        max-width: 100%;
-
-        font-size:
-          clamp(
-            48px,
-            13vw,
-            72px
-          );
-
-        line-height: 0.94;
-      }
-
-      .coming-soon-text {
-        width: 100%;
-        max-width: 100%;
-
-        min-width: 0;
-
-        padding-left: 16px;
-        padding-right: 4px;
-
-        font-size: 15px;
-
-        line-height: 1.7;
-
-        white-space: normal;
-
-        overflow-wrap: break-word;
-      }
-
-
-      /* CONTACT */
-
-      .contact {
-        padding-top: 100px;
-      }
-
-      .contact-grid {
-        grid-template-columns:
-          minmax(0, 1fr);
-
-        width: 100%;
-
-        gap: 48px;
-      }
-
-      .contact-info {
-        width: 100%;
-        max-width: 100%;
-
-        padding-left: 16px;
-        padding-right: 4px;
-      }
-
-      .contact-email {
-        max-width: 100%;
-
-        font-size:
-          clamp(
-            17px,
-            5vw,
-            22px
-          );
-
-        overflow-wrap: anywhere;
-      }
-
-
-      /* FOOTER */
-
-      .footer-grid {
-        flex-direction: column;
-
-        gap: 16px;
-      }
-
-      .footer-claim {
-        max-width: 100%;
-
-        text-align: left;
-
-        line-height: 1.6;
-      }
-    }
-
-
-    /* ======================================================
-       VERY SMALL SCREENS
-    ====================================================== */
-
+}
     @media (max-width: 420px) {
 
       .brand-sub {
@@ -1364,45 +1049,18 @@
 
       .eyebrow {
         font-size: 8px;
-
         letter-spacing: 0.2em;
       }
 
       .positioning-item-title {
         max-width: 280px;
-
         font-size: 14px;
-      }
-
-      .engineering-title {
-        font-size:
-          clamp(
-            23px,
-            7vw,
-            31px
-          );
-      }
-
-      .engineering-row {
-        gap: 7px;
-      }
-
-      .engineering-frame-icon {
-        width: 0.70em;
-        height: 0.70em;
-
-        flex: 0 0 0.70em;
       }
 
       .contact-email {
         font-size: 18px;
       }
     }
-
-
-    /* ======================================================
-       REDUCED MOTION
-    ====================================================== */
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -1420,35 +1078,19 @@
   </style>
 </head>
 
-
 <body>
 
-  <a
-    class="skip-link"
-    href="#main-content"
-  >
-    Zum Inhalt springen
-  </a>
-
-
-  <!-- ======================================================
-       HEADER
-  ====================================================== -->
+ <a class="skip-link" href="#main-content">
+  Zum Inhalt springen
+</a>
 
   <header class="site-header">
 
     <div class="container navigation">
 
+    <a class="brand" href="#top" aria-label="Form-Lite Startseite">
 
-      <!-- CLICKABLE LOGO -->
-
-      <a
-        class="brand"
-        href="#top"
-        aria-label="Form-Lite Startseite"
-      >
-
-        <svg
+<svg
           class="brand-symbol"
           viewBox="0 0 72 94"
           role="img"
@@ -1464,7 +1106,6 @@
               x2="1"
               y2="0"
             >
-
               <stop
                 offset="0%"
                 stop-color="#132035"
@@ -1474,9 +1115,7 @@
                 offset="100%"
                 stop-color="#46566b"
               />
-
             </linearGradient>
-
 
             <linearGradient
               id="logo-blue"
@@ -1485,7 +1124,6 @@
               x2="1"
               y2="0"
             >
-
               <stop
                 offset="0%"
                 stop-color="#2055dc"
@@ -1500,9 +1138,7 @@
                 offset="100%"
                 stop-color="#19b5ef"
               />
-
             </linearGradient>
-
 
             <linearGradient
               id="logo-edge"
@@ -1511,7 +1147,6 @@
               x2="0"
               y2="1"
             >
-
               <stop
                 offset="0%"
                 stop-color="#2d6cf0"
@@ -1521,29 +1156,24 @@
                 offset="100%"
                 stop-color="#1645b8"
               />
-
             </linearGradient>
 
           </defs>
-
 
           <path
             d="M5 4 H56 L64 45 H10 Z"
             fill="url(#logo-steel)"
           />
 
-
           <path
             d="M10 47 H64 L70 90 H16 Z"
             fill="url(#logo-blue)"
           />
 
-
           <path
             d="M5 4 L10 47 L16 90 L12 90 L6 47 L1 4 Z"
             fill="url(#logo-edge)"
           />
-
 
           <path
             d="M10 45 H64 L64.4 48 H10.3 Z"
@@ -1552,7 +1182,6 @@
           />
 
         </svg>
-
 
         <span class="brand-copy">
 
@@ -1564,31 +1193,36 @@
 
             <span class="brand-lite">
               -LITE
-            </span -->
+            </span>
 
-      #contact
-        Contact
+          </span>
 
-        <span aria-hidden="true">
-          →
+          <span class="brand-rule"></span>
+
+          <span class="brand-sub">
+            Lite Mobility · Closer to the Market · Faster to Sustain
+          </span>
+
         </span>
+
       </a>
 
+     <a class="nav-contact" href="#contact">
+  Contact
+
+  <span aria-hidden="true">
+    →
+  </span>
+</a>
 
     </div>
 
   </header>
 
-
-  <!-- ======================================================
-       MAIN
-  ====================================================== -->
-
   <main
     id="main-content"
     tabindex="-1"
   >
-
 
     <!-- ====================================================
          HERO
@@ -1603,7 +1237,6 @@
 
         <div class="hero-content">
 
-
           <div class="eyebrow">
 
             <span
@@ -1615,17 +1248,14 @@
 
           </div>
 
-
           <h1>
             Engineering the next generation of bicycle frames.
           </h1>
-
 
           <p class="hero-lead">
             Industrialized lightweight structures.
             Made in Europe. Built to scale.
           </p>
-
 
           <p class="hero-text">
             Form-Lite develops advanced manufacturing solutions
@@ -1634,24 +1264,19 @@
             and circular material strategies.
           </p>
 
+        <a class="primary-button" href="#contact">
+  Contact us
 
-          <!-- CLICKABLE CTA -->
-
-          #contact
-            Contact us
-
-            <span aria-hidden="true">
-              →
-            </span>
-          </a>
-
+  <span aria-hidden="true">
+    →
+  </span>
+</a>
 
         </div>
 
       </div>
 
     </section>
-
 
     <!-- ====================================================
          POSITIONING
@@ -1663,7 +1288,6 @@
     >
 
       <div class="container positioning-strip-grid">
-
 
         <article class="positioning-item">
 
@@ -1681,7 +1305,6 @@
 
         </article>
 
-
         <article class="positioning-item">
 
           <span class="positioning-number">
@@ -1697,7 +1320,6 @@
           </p>
 
         </article>
-
 
         <article class="positioning-item">
 
@@ -1715,153 +1337,76 @@
 
         </article>
 
-
       </div>
 
     </section>
 
-
     <!-- ====================================================
-         FORM-LITE APPROACH
+         ENGINEERING / MANUFACTURING / MOBILITY
     ===================================================== -->
 
     <section class="engineering">
 
       <div class="container">
 
-
         <div class="section-label">
           Form-Lite Approach
         </div>
 
-
         <div class="engineering-grid">
-
 
           <div class="engineering-title">
 
-
-            <!-- LIGHTWEIGHT DESIGN -->
+            <div class="engineering-row">
+              Engineering
+            </div>
 
             <div class="engineering-row">
 
-              <svg
-                class="engineering-frame-icon"
-                viewBox="0 0 64 44"
+              <span
+                class="engineering-x"
                 aria-hidden="true"
               >
-                <path
-                  d="M8 35 L23 9 L38 35 Z"
-                />
-
-                <path
-                  d="M23 9 L49 14 L38 35"
-                />
-
-                <path
-                  d="M49 14 L55 7"
-                />
-
-                <path
-                  d="M19 9 H27"
-                />
-              </svg>
-
-              <span class="engineering-label">
-                Lightweight Design
+                ×
               </span>
 
+              Manufacturing
+
             </div>
-
-
-            <!-- MANUFACTURING -->
 
             <div class="engineering-row">
 
-              <svg
-                class="engineering-frame-icon"
-                viewBox="0 0 64 44"
+              <span
+                class="engineering-x"
                 aria-hidden="true"
               >
-                <path
-                  d="M8 35 L23 9 L38 35 Z"
-                />
-
-                <path
-                  d="M23 9 L49 14 L38 35"
-                />
-
-                <path
-                  d="M49 14 L55 7"
-                />
-
-                <path
-                  d="M19 9 H27"
-                />
-              </svg>
-
-              <span class="engineering-label">
-                Manufacturing
+                ×
               </span>
 
-            </div>
-
-
-            <!-- MOBILITY -->
-
-            <div class="engineering-row">
-
-              <svg
-                class="engineering-frame-icon"
-                viewBox="0 0 64 44"
-                aria-hidden="true"
-              >
-                <path
-                  d="M8 35 L23 9 L38 35 Z"
-                />
-
-                <path
-                  d="M23 9 L49 14 L38 35"
-                />
-
-                <path
-                  d="M49 14 L55 7"
-                />
-
-                <path
-                  d="M19 9 H27"
-                />
-              </svg>
-
-              <span class="engineering-label">
-                Mobility
-              </span>
+              Mobility
 
             </div>
-
 
           </div>
-
 
           <div class="engineering-copy">
 
             <p>
-              We combine lightweight product design with advanced
+              We combine product engineering with advanced
               manufacturing technologies to rethink how bicycle
               frame structures can be developed and industrialized.
-              Our focus is on precise, scalable and resource-efficient
-              solutions for the next generation of mobility.
+              Our focus is on precise, scalable and
+              resource-efficient solutions for the next
+              generation of mobility.
             </p>
 
           </div>
-
 
         </div>
 
       </div>
 
     </section>
-
 
     <!-- ====================================================
          COMING SOON
@@ -1871,34 +1416,29 @@
 
       <div class="container">
 
-
         <div class="section-label">
           What's next
         </div>
 
-
         <div class="coming-soon-grid">
-
 
           <h2 class="coming-soon-title">
             Something new<br>
             is taking shape.
           </h2>
 
-
           <p class="coming-soon-text">
-            Our new corporate website is currently under development.
-            More about Form-Lite, our engineering approach and our
-            technology will follow.
+            Our new corporate website is currently
+            under development. More about Form-Lite,
+            our engineering approach and our technology
+            will follow.
           </p>
-
 
         </div>
 
       </div>
 
     </section>
-
 
     <!-- ====================================================
          CONTACT
@@ -1911,20 +1451,16 @@
 
       <div class="container">
 
-
         <div class="section-label">
           Contact
         </div>
 
-
         <div class="contact-grid">
-
 
           <h2 class="contact-title">
             Let's<br>
             connect.
           </h2>
-
 
           <div class="contact-info">
 
@@ -1936,7 +1472,6 @@
               Witten, Germany
             </p>
 
-
             <a
               class="contact-email"
               href="mailto:timo.druege@form-lite.com"
@@ -1946,13 +1481,7 @@
 
           </div>
 
-
         </div>
-
-
-        <!-- ==================================================
-             FOOTER
-        =================================================== -->
 
         <footer class="site-footer">
 
@@ -1970,11 +1499,9 @@
 
         </footer>
 
-
       </div>
 
     </section>
-
 
   </main>
 
