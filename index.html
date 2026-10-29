@@ -516,47 +516,64 @@
       align-items: center;
     }
 
-    .engineering-title {
-      font-size:
-        clamp(
-          42px,
-          5.5vw,
-          82px
-        );
+.engineering-title {
+  min-width: 0;
 
-      font-weight: 640;
-      line-height: 1;
-      letter-spacing: -0.04em;
-      text-transform: uppercase;
-    }
+  font-size:
+    clamp(
+      34px,
+      4.2vw,
+      68px
+    );
 
-    .engineering-row {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
+  font-weight: 640;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
 
-    .engineering-row + .engineering-row {
-      margin-top: 5px;
-    }
 
-    .engineering-x {
-      color: var(--blue);
-      font-size: 0.8em;
-      font-weight: 400;
-    }
+.engineering-row {
+  display: flex;
+  align-items: center;
 
-    .engineering-copy {
-      padding-left: 45px;
-      border-left: 1px solid var(--line-strong);
-    }
+  width: 100%;
+  min-width: 0;
 
-    .engineering-copy p {
-      max-width: 570px;
-      color: var(--grey);
-      font-size: 17px;
-      line-height: 1.8;
-    }
+  gap: 18px;
+}
+
+
+.engineering-row + .engineering-row {
+  margin-top: 12px;
+}
+
+
+.engineering-frame-icon {
+  width: 0.72em;
+  height: 0.72em;
+
+  flex: 0 0 0.72em;
+
+  fill: none;
+
+  stroke: var(--blue);
+  stroke-width: 3;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  overflow: visible;
+}
+
+
+.engineering-label {
+  display: block;
+
+  min-width: 0;
+
+  white-space: nowrap;
+}
 
     /* ======================================================
        COMING SOON
@@ -907,67 +924,49 @@
     gap: 48px;
   }
 
-  .engineering-title {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
+ .engineering-title {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 
-    font-size: clamp(29px, 8.6vw, 49px);
-    line-height: 1.04;
-    letter-spacing: -0.05em;
-  }
+  font-size: clamp(24px, 7vw, 41px);
 
-  .engineering-row {
-    display: flex;
-    align-items: center;
-
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    gap: 6px;
-    white-space: nowrap;
-  }
-
-  .engineering-x {
-    flex: 0 0 auto;
-    font-size: 0.68em;
-  }
-
-  .engineering-copy {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    padding-left: 16px;
-    padding-right: 4px;
-
-    border-left: 1px solid rgba(255, 255, 255, 0.20);
-
-    overflow: visible;
-  }
-
-  .engineering-copy p {
-    display: block;
-
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    margin: 0;
-
-    color: var(--grey);
-
-    font-size: 15px;
-    line-height: 1.7;
-
-    white-space: normal;
-    overflow: visible;
-    overflow-wrap: anywhere;
-    word-break: normal;
-  }
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
 
 
+.engineering-row {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  gap: 8px;
+}
+
+.engineering-row + .engineering-row {
+  margin-top: 9px;
+}
+
+
+.engineering-frame-icon {
+  width: 0.68em;
+  height: 0.68em;
+
+  flex: 0 0 0.68em;
+
+  stroke-width: 3.2;
+}
+
+
+.engineering-label {
+  min-width: 0;
+
+  white-space: nowrap;
+}
   /* COMING SOON */
 
   .coming-soon-grid {
@@ -1355,49 +1354,70 @@
 
         <div class="engineering-grid">
 
-          <div class="engineering-title">
+         <div class="engineering-title">
 
-            <div class="engineering-row">
-              Engineering
-            </div>
+  <div class="engineering-row">
+    <svg
+      class="engineering-frame-icon"
+      viewBox="0 0 64 44"
+      aria-hidden="true"
+    >
+      <path d="M8 35 L23 9 L38 35 Z"></path>
+      <path d="M23 9 L49 14 L38 35"></path>
+      <path d="M49 14 L55 7"></path>
+      <path d="M19 9 H27"></path>
+    </svg>
 
-            <div class="engineering-row">
+    <span class="engineering-label">
+      Lightweight Design
+    </span>
+  </div>
 
-              <span
-                class="engineering-x"
-                aria-hidden="true"
-              >
-                ×
-              </span>
 
-              Manufacturing
+  <div class="engineering-row">
+    <svg
+      class="engineering-frame-icon"
+      viewBox="0 0 64 44"
+      aria-hidden="true"
+    >
+      <path d="M8 35 L23 9 L38 35 Z"></path>
+      <path d="M23 9 L49 14 L38 35"></path>
+      <path d="M49 14 L55 7"></path>
+      <path d="M19 9 H27"></path>
+    </svg>
 
-            </div>
+    <span class="engineering-label">
+      Manufacturing
+    </span>
+  </div>
 
-            <div class="engineering-row">
 
-              <span
-                class="engineering-x"
-                aria-hidden="true"
-              >
-                ×
-              </span>
+  <div class="engineering-row">
+    <svg
+      class="engineering-frame-icon"
+      viewBox="0 0 64 44"
+      aria-hidden="true"
+    >
+      <path d="M8 35 L23 9 L38 35 Z"></path>
+      <path d="M23 9 L49 14 L38 35"></path>
+      <path d="M49 14 L55 7"></path>
+      <path d="M19 9 H27"></path>
+    </svg>
 
-              Mobility
+    <span class="engineering-label">
+      Mobility
+    </span>
+  </div>
 
-            </div>
-
-          </div>
-
-          <div class="engineering-copy">
-
+</div>
             <p>
-              We combine product engineering with advanced
-              manufacturing technologies to rethink how bicycle
-              frame structures can be developed and industrialized.
-              Our focus is on precise, scalable and
-              resource-efficient solutions for the next
-              generation of mobility.
+           <p>
+  We combine lightweight product design with advanced
+  manufacturing technologies to rethink how bicycle frame
+  structures can be developed and industrialized.
+  Our focus is on precise, scalable and resource-efficient
+  solutions for the next generation of mobility.
+</p>
             </p>
 
           </div>
